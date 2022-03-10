@@ -1,0 +1,480 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26 Aug 2020, 15:00:30
+    Author     : albinbecevic
+*/
+
+.backgroundImage{
+    background: url("#{resource['images/white-book-in-white-table-near-yellow-wall-3760323.jpg']}");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.loginPanel{
+    
+}
+
+#loginSquare{
+    background-color: white;
+    height: 40vh;
+    width: 17%;
+    margin-top: 8%;
+    margin-left: 41%;
+
+    /*display: inline-block;*/
+    left: 30%;
+    top: 100%;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thick;
+    border-color: gray;
+}
+
+#creationSquare{
+    background-color: white;
+    height: 55vh;
+    width: 17%;
+    margin-top: 8%;
+    margin-left: 41%;
+
+    /*display: inline-block;*/
+    left: 30%;
+    top: 100%;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thick;
+    border-color: gray;
+}
+
+#schoolitText{
+    font-size: 30px;
+    letter-spacing: 2px;
+    padding-left: 50px;
+    color: white;
+}
+
+#welcomeText{
+    font-family: Odibee, sans-serif;
+    color: white;
+    letter-spacing: 0px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0%;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.panelGrid{
+    margin: 0 auto;
+    margin-top: 180px;
+    text-align: center;
+}
+
+.panelGrid.ui-panelgrid>*>tr,
+.panelGrid.ui-panelgrid .ui-panelgrid-cell{
+    border: none;
+}
+
+.ui-panelgrid td, .ui-panelgrid tr{
+    /*Vet inte riktigt vad den här gör*/
+}
+
+button{
+    width: 200px;
+    height: 40px;
+}
+
+#loginInput{
+    margin-left: 11%;
+    padding-top: 20px;
+    position: relative;
+}
+
+/*These are the fields for create teacher account*/
+#j_idt9\:j_idt14{
+    width: 90%;
+}
+
+#j_idt9\:j_idt16{
+    width: 90%;
+}
+
+#j_idt9\:j_idt18{
+    width: 90%;
+}
+
+#j_idt9\:j_idt20{
+    width: 90%;
+}
+
+#j_idt9\:j_idt22{
+    width: 90%;
+}
+
+#j_idt9\:j_idt24{
+    width: 90%;
+}
+/*The create account teacher fields ends here*/
+
+/*These are the fields for create student account*/
+#j_idt36\:j_idt41{
+    width: 90%;
+}
+
+#j_idt36\:j_idt43{
+    width: 90%;
+}
+
+#j_idt36\:j_idt45{
+    width: 90%;
+}
+
+#j_idt36\:j_idt47{
+    width: 90%;
+}
+
+#j_idt36\:j_idt49{
+    width: 90%;
+}
+
+#j_idt36\:j_idt51{
+    width: 90%;
+}
+/*The create account student fields ends here*/
+
+#passwordInput{
+    margin-left: 11%;
+    padding-top: 20px;
+}
+
+#loginButton{
+    margin-left: 8%;
+    padding-top: 8%;
+}
+
+#createAccButton{
+    padding-top: 15%;
+    margin-left: 8%;
+}
+
+#createAccButtonText{
+    font-family: Odibee, sans-serif;
+    font-weight: bold;
+    margin-left: 1%;
+    font-size: 12px;
+    margin-bottom: 2%;
+    color: dimgray;
+}
+
+#parentDiv{
+    height: 10%;
+    width: 35%;
+    margin-top: 8%;
+    margin-left: 35%;
+}
+
+.square{
+    background-color: white;
+    width: 40%;
+    height: 20vw;
+    display: inline-block;
+    left: 30%;
+    top: 100%;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thick;
+    border-color: gray;
+}
+
+#square2{
+    background-color: white;
+    width: 40%;
+    height: 20vw;
+    display: inline-block;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thick;
+    border-color: gray;
+}
+
+#backButton{
+    margin-left: 43%;
+    padding-top: 1%;
+}
+
+.selectTypeButton{
+    margin-top: 100%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+#j_idt9\:j_idt11{
+    margin-top: 100%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+#j_idt9\:j_idt11:hover{
+    transform: scale(1.1);
+}
+
+#j_idt13\:j_idt15{
+    margin-top: 100%;
+    margin-left: 10%;
+    width: 80%;
+}
+
+#j_idt13\:j_idt15:hover{
+    transform: scale(1.1);
+}
+
+#youChooseText{    
+    padding-left: 10%;
+    display: inline;
+    margin-left: 9%;
+    font-weight: bold;
+    color: gray;
+
+}
+
+#creationButtonSquare{
+    padding-top: 5%;
+}
+
+.creationButton1{
+    font-size: 12px;    
+    margin-left: 8%;
+    width: 70px;
+}
+
+/*Back button in create teacher account page*/
+#j_idt37\:j_idt53{
+    font-size: 12px;    
+    margin-left: 8%;
+    width: 70px;
+}
+
+/*Back button in create student account page*/
+#j_idt9\:j_idt26{
+    font-size: 12px;    
+    margin-left: 8%;
+    width: 70px;
+}
+
+.creationButton2{
+    margin-left: 5%;
+    font-size: 12px;
+    width: 120px;
+}
+
+/*Creat Account button in create teacher account page*/
+#j_idt37\:j_idt55{
+    margin-left: 5%;
+    font-size: 12px;
+    width: 120px;
+}
+
+/*Creat Account button in create student account page*/
+#j_idt9\:j_idt27{
+    margin-left: 5%;
+    font-size: 12px;
+    width: 120px;
+}
+
+.selectTypePicture{
+    position: absolute;
+    margin-left: 3%;
+    margin-right: 50%;
+    margin-top: 60px;
+    vertical-align: middle;
+}
+
+.ui-dashboard-column{
+    width: 220px;
+}
+
+.ui-panel, div.ui-state-hover{
+    margin: 10px;
+    width: 200px;
+}
+
+/*
+.menuView{
+    height: 100%;
+    background-color: grey;
+    position: relative;
+    top: -30px;
+    width: 70px;
+    display: inline-block;
+    background-size: cover;
+}*/
+
+
+.menuButtons .ui-button{
+    /*margin-left: 1%;*/
+    border: none;
+    background: none;
+    padding-bottom: 130px;
+    width: 70px;
+}
+
+
+.userButton .ui-button-text{
+    margin-left: -70px;
+    width: 200px;
+    margin-top: 80px;
+}
+
+.calendarButton .ui-button-text{
+    margin-left: -70px;
+    width: 200px;
+    margin-top: 80px;
+}
+
+.checkButton .ui-button-text{
+    margin-left: -72px;
+    width: 200px;
+    margin-top: 80px;
+}
+
+.justifyButton .ui-button-text{
+    margin-left: -70px;
+    width: 200px;
+    margin-top: 80px;
+    font-size: 80%;
+}
+
+.userButton .ui-icon{
+    margin-left: 16px;
+}
+
+.calendarButton .ui-icon{
+    margin-left: 16px;
+}
+
+.checkButton .ui-icon{
+    margin-left: 16px;
+}
+
+.justifyButton .ui-icon{
+    margin-left: 16px;
+}
+
+.pi-user{
+   transform: scale(3.0);
+}
+
+.pi-calendar{
+    transform: scale(2.0); 
+}
+
+.pi-check{
+    transform: scale(2.0)
+}
+
+.pi-align-justify{
+    transform: scale(2.0);
+}
+
+.HomepageWrapper{
+    margin-top: -30px;
+    overflow: hidden;
+    background-color: white;
+}
+
+
+.memberWelcomeText{
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 100px;
+    font-size: 40px;
+    font-family: verdana;
+    
+}
+
+.menuView{
+    height: 600px;
+    background-color: grey;
+    position: relative;
+    width: 5%;
+    float: left;
+}
+
+.DashboardView{
+    float: left;
+    background-color: white;
+    width: 95%;
+    margin-top: 80px;
+    height: 520px;
+    border-top: 1px solid grey;
+}
+
+#syllabusHeader{
+    font-weight: bold;
+    background-color: lightgray;
+    width: 100%;
+    padding-left: 20px;
+    font-family: Arial, sans-serif;
+    color: black;
+}
+
+.scrollable{
+    overflow-y: auto;
+    height: 100%;
+}
+
+#j_idt9\:courseCodeLabel{
+    margin-left: 2%;
+    font-size: large;
+}
+
+#j_idt9\:courseCode{
+    margin-left: 5%;
+    font-size: large;
+}
+
+#j_idt9\:courseReturn{
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 10%;
+}
+
+#j_idt9\:j_idt26\:j_idt27{
+    height: 5%;
+}
+
+#j_idt9\:j_idt26\:j_idt32{
+    width: 150%;
+    height: 50%;
+}
+
+#j_idt9\:j_idt26\:j_idt30{
+    position: absolute;
+    margin-bottom: 10%;
+}
+
+#j_idt9\:j_idt26\:j_idt31{
+    width: 30%;
+    height: 50%;
+    margin-left: 70%;
+}
+
+#j_idt9\:courseStudentReturn{
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 10%;
+}
+
+
+
+
+

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+        <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
+    </h:head>
+    
+    <h:body styleClass="backgroundImage">
+
+        <div id="schoolitText">
+            <h1>SchoolIT</h1>
+        </div>
+        
+        <h:form>
+
+            <p:growl id="messages" showDetail="true"/>
+            
+            <div class="HomepageWrapper">
+                
+                <h:outputLabel styleClass="memberWelcomeText" value = "Welcome" />
+                
+                <div class="menuView">
+                    <div class="menuButtons">
+                        <p:button styleClass="userButton" icon="pi pi-user" value="Account"/>
+                        <p:button styleClass="calendarButton" icon="pi pi-calendar" value="Calendar"/>
+                        <p:button styleClass="checkButton" icon="pi pi-check" value="Deadlines"/>
+                        <p:button styleClass="justifyButton" icon="pi pi-align-justify" value="Assignments"/>
+                        <p:commandButton value="Logout" action="#{loginBackingBean.logout}"/>
+                    </div>               
+                </div>
+                
+                <div class="DashboardView">
+                    
+                    <ui:insert name="dashboardView">
+                        <ui:include src="/member/TeacherDashboard.xhtml"/>
+                    </ui:insert>
+
+                </div>
+
+            </div>
+
+        </h:form>
+        
+    </h:body>
+    
+</html>

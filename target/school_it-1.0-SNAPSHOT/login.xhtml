@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+        <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
+    </h:head>
+    
+    <h:body>
+        
+        
+        <div id="welcomeText">
+            <h1>Welcome</h1>
+        </div>
+        <h:form>
+
+            <p:messages>
+                <p:autoUpdate/>
+            </p:messages>
+
+            <div id="loginSquare">
+                <div id="loginInput">
+                    <p:inputText placeholder="E-mail" value="#{loginBackingBean.email}"/>
+                </div>
+                <div id="passwordInput">
+                    <p:password placeholder="Password" value="#{loginBackingBean.password}"/>
+                </div>
+                <div id="loginButton">
+                    <p:commandButton value="Login" update="@form" style="background-image: none" action="#{loginBackingBean.login}" ajax="false"/>
+                </div>
+                <div id="createAccButton">
+                    <p id='createAccButtonText'>Don't have an account?</p>
+                    <p:button value="Create Account" outcome="selectTypePage"/>
+                </div>
+            </div>
+        </h:form>
+    </h:body>
+    
+</html>

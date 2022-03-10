@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    
+    <h:body>
+        <ui:composition template="/index.xhtml">
+            <ui:define name="starterSection">
+
+                <div id="welcomeText">
+                    <h1>Create Account</h1>
+                </div>
+
+                <h:form>
+                    <p:messages>
+                        <p:autoUpdate/>
+                    </p:messages>
+
+                    <div id="creationSquare">
+                        <div>
+                            <h3 id="youChooseText">You Choose:</h3>
+                            <h:graphicImage name="images/book-2841867_1920.jpg" style="height: 40px; width: 55px"/>
+                        </div>
+
+                        <div id="loginInput">
+                            <p:inputText placeholder="E-mail" style="height: 25px" value="#{createStudentBackingBean.email}" required="true" label="E-mail"/>
+                        </div>
+
+                        <div id="loginInput">
+                            <p:inputText placeholder="First Name" style="height: 25px" value="#{createStudentBackingBean.firstName}" required="true" label="First Name"/>
+                        </div>
+
+                        <div id="loginInput">
+                            <p:inputText placeholder="Last Name" style="height: 25px" value="#{createStudentBackingBean.lastName}" required="true" label="Last Name"/>
+                        </div>
+
+                        <div id="loginInput">
+                            <p:inputText placeholder="Organisation" style="height: 25px" value="#{createStudentBackingBean.organisation}" required="true" label="Organisation"/>
+                        </div>
+
+                        <div id="passwordInput">
+                            <p:password placeholder="Password" style="height: 25px" value="#{createStudentBackingBean.password}" required="true" label="Password"/>
+                        </div>
+
+                        <div id="passwordInput">
+                            <p:password placeholder="Confirm Password" style="height: 25px" value="#{createStudentBackingBean.confirmPassword}" required="true" label="Confirm Password"/>
+                        </div>
+
+                        <div id="creationButtonSquare">
+                            <p:button styleClass="creationButton1" value="Back" outcome="index"/>
+                            <p:commandButton styleClass="creationButton2" value="Create Account" action="#{createStudentBackingBean.createAccount}"/>
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

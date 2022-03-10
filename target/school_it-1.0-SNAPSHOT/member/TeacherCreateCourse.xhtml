@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+        <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
+    </h:head>
+
+    <h:body>
+
+        <ui:composition template="/member/TeacherHomePage.xhtml">
+            
+            <ui:define name="dashboardView">
+                
+                <div class="scrollable">
+                    
+                    <div class="card">                                        
+                        <h2 id="syllabusHeader">Course Name</h2>
+                        <p:panelGrid columns="2" layout="grid" styleClass="showcase-text-align-center">
+                            <p:outputLabel value="Course Name"/>                                                                       
+                            <h:outputText value="Generated Course Code"/>
+
+                            <p:inputText value="#{createCourseBackingBean.courseName}"/>
+                            <p:inplace>
+                                <p:inputText value="#{createCourseBackingBean.courseID}"/>
+                            </p:inplace>
+
+                            <p:commandButton value="Submit" action="#{createCourseBackingBean.createCourse}"/>
+                            <p:selectBooleanCheckbox/>
+
+                        </p:panelGrid>
+                    </div>
+
+                    <div class="card">
+                     
+                        <h2 id="syllabusHeader">Syllabus</h2>
+                        <p:panelGrid columns="4" layout="grid" styleClass="showcase-text-align-center">
+                            <p:outputLabel value="Date And Time"/>                                                                       
+                            <h:outputText value="Topic"/>
+                            <h:outputText value="Recommended Reading"/>
+                            <h:outputText value="Recommended Assignments"/> 
+                            
+                            <p:datePicker id="date" value="#{createCourseBackingBean.date}" showIcon="true" style="width:auto"/>
+                            <p:inputText value="#{createCourseBackingBean.topic}"/>
+                            <p:inputText value="#{createCourseBackingBean.recReading}"/>
+                            <p:inputText value="#{createCourseBackingBean.recAssignments}"/>
+                            <p:commandButton value="Submit" action="#{createCourseBackingBean.createModule}" update="Modules"/>
+                            <p:outputLabel />
+                            <p:outputLabel />
+                            </p:panelGrid>
+
+                            <!-- TO DO: CREATE MODULES AND UPDATE SYLLABUS SECTION WITH THIS BELOW-->
+
+                            <p:dataTable style="width: 100%" id="Modules" var="courseModule" value="#{createCourseBackingBean.modulesList}" rowKey="#{courseModule.moduleID}"
+                                         selection="#{createCourseBackingBean.selectedCm}" selectionMode="single">
+                                <f:facet name="header">
+                                    RightClick to View Options
+                                </f:facet>
+
+                                <p:column headerText="Date and Time">
+                                    <h:outputText value="#{courseModule.week}" />
+                                </p:column>
+                                <p:column headerText="Topic">
+                                    <h:outputText value="#{courseModule.topic}"/>
+                                </p:column>
+                                <p:column headerText="Recommended Reading">
+                                    <h:outputText value="#{courseModule.lectureDescp}" />
+                                </p:column>
+                                <p:column headerText="Recommended Assignments">
+                                    <h:outputText value="#{courseModule.exercises}" />
+                                </p:column>
+                            </p:dataTable>
+
+                            <p:contextMenu for="Modules">
+                                <p:menuitem value="Delete" action="#{createCourseBackingBean.deleteModule}" update="Modules" icon="pi pi-times"/>
+                            </p:contextMenu>
+
+                     
+                    </div>
+                    
+                    <div class="card">
+                        <h2 id="syllabusHeader">Create Assignments</h2>
+                        <p:textEditor widgetVar="editor1" value="#{createCourseBackingBean.description}" height="300"  />
+                        <p:commandButton value="Create Assignment" action="#{createCourseBackingBean.createAssignment}" update="Assignments"/>
+
+                        <p:dataTable var="assignment" id="Assignments" value="#{createCourseBackingBean.assignmentList}" rowKey="#{assignment.assignmentID}"
+                                     selection="#{createCourseBackingBean.selectedAssignment}" selectionMode="single">
+                            <f:facet name="header">
+                                RightClick to View Options
+                            </f:facet>
+
+                            <p:column headerText="Assignments" width="100%">
+                                <p:outputPanel deferred="true">
+                                    <!--<h5>Loaded after page load</h5> -->
+                                    <h:outputText value="#{assignment.description}" escape="false"/>
+                                </p:outputPanel>
+                            </p:column>
+                        </p:dataTable>
+
+                        <p:contextMenu for="Assignments">
+                            <p:menuitem value="Delete" action="#{createCourseBackingBean.deleteAssignment}" update="Assignments" icon="pi pi-times"/>
+                        </p:contextMenu>
+
+                    </div>
+                    
+                    <p:commandLink action="#{createCourseBackingBean.returnAction}" value="Done" style="margin-right:20px;" ajax="false"/>
+           </div>
+            
+            </ui:define>
+    
+
+        </ui:composition>
+
+    </h:body>
+</html>
+     

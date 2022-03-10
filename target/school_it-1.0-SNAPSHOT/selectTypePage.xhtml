@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    
+    <h:head>
+        <title>Facelet Title</title>
+        <h:outputStylesheet library="css" name="main.css"/>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="/index.xhtml">
+            <ui:define name="starterSection">
+
+                <div id="welcomeText">
+                    <h1>Please Select:</h1>
+                </div> 
+                <div id="parentDiv">
+                    <div class="square">
+                        <h:form>
+                            <h:graphicImage styleClass="selectTypePicture" name="images/book-2841867_1920.jpg" style="height: 110px; width: 115px"/>
+                            <p:button styleClass="selectTypeButton" value="Student" outcome="createStudentPage"/> 
+                        </h:form>
+                    </div>
+                    <div id="square2">
+                        <h:form>
+                            <h:graphicImage styleClass="selectTypePicture" name="images/teacher-1202735_1920.png" style="height: 110px; width: 110px;"/>
+                            <p:button styleClass="selectTypeButton" value="Teacher" outcome="createTeacherPage"/>
+                        </h:form>
+                    </div>
+                </div>
+                <div id="backButton">
+                    <p:button value="Back" outcome="index"/>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

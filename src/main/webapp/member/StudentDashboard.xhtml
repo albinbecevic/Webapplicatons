@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+    
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <h:outputStylesheet library="css" name="main.css"/>
+        <h:outputStylesheet name="primeicons/primeicons.css" library="primefaces"/>
+    </h:head>
+    
+    <h:body>
+        
+            <h:form>
+                <p:growl id="msgs" showDetail="true"/>
+
+                <p:dashboard id="board" model="#{studentDashboardView.model}">
+                    <p:ajax event="reorder" listener="#{studentDashboardView.handleReorder}" update="msgs"/>
+
+                    
+                    <p:panel id="createCourse" header="Join Course">
+                        <f:facet name="actions">
+                            <p:commandButton type="button" icon="pi pi-external-link" onclick="PF('dlg2').show()"/>
+                        </f:facet>
+                    </p:panel>
+
+               
+                    <c:forEach items="#{studentDashboardView.courseList}" var="course">
+                        
+                        <p:panel id="#{course.courseID}" header="#{course.courseName}">
+                            <f:facet name="actions">
+                                <p:link id="course" outcome="/member/StudentCoursePage">
+                                    <h:outputText value="+"/>
+                                    <f:param name="courseID" value="#{course.courseID}"/>
+                                </p:link>
+                            </f:facet>
+                        </p:panel>
+                        
+                    </c:forEach>
+
+
+                </p:dashboard>
+                
+                
+
+                <div style="clear:both"/>
+            </h:form>
+
+            <p:dialog header="Join Course" widgetVar="dlg2" minHeight="40" width="350" showEffect="fade" modal="true">        
+                        <p class="p-m-0">Write the course code</p>
+                        <p:inputText placeholder="Search" value="#{studentDashboardView.courseCodeSearch}"/>                       
+                        <p:commandLink value="Submit" action="#{studentDashboardView.joinCourse}" ajax="false"/>         
+                    </p:dialog>
+        
+    </h:body>
+    
+</html>
